@@ -13,7 +13,7 @@ class LeftMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var mainViewController: UIViewController!
     var listGenreQuizz: ListGenreQuizzVC!
-    var items: [String] = ["Home", "Quizz", "Test"]
+    var items: [String] = ["Home","Aut", "Quizz", "Test"]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -56,10 +56,15 @@ class LeftMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             revealVC.pushFrontViewController(newRootVC, animated: true)
             
         case 1:
+            let authVC = AuthOtherAccount(nibName: AuthOtherAccount.className(), bundle: nil)
+            let newRootVC = UINavigationController(rootViewController: authVC)
+            revealVC.pushFrontViewController(newRootVC, animated: true)
+        case 2:
             let listGenreVC = ListGenreQuizzVC(nibName: ListGenreQuizzVC.className(), bundle: nil)
             let newRootVC = UINavigationController(rootViewController: listGenreVC)
             revealVC.pushFrontViewController(newRootVC, animated: true)
-        case 2:
+            
+        case 3:
             let listGenreVC = ListGenreQuizzVC(nibName: ListGenreQuizzVC.className(), bundle: nil)
             let newRootVC = UINavigationController(rootViewController: listGenreVC)
             revealVC.pushFrontViewController(newRootVC, animated: true)
