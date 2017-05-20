@@ -35,6 +35,10 @@ class HomeVC: UIViewController, iCarouselDelegate, iCarouselDataSource {
        
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        carouselView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,7 +50,15 @@ class HomeVC: UIViewController, iCarouselDelegate, iCarouselDataSource {
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         let tempView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-        tempView.backgroundColor = UIColor.blue
+        
+        let userDefaults = UserDefaults()
+        if let sessionObj:AnyObject = userDefaults.object(forKey: "SpotifySession") as AnyObject? {
+             tempView.backgroundColor = UIColor.red
+        }
+        else {
+            tempView.backgroundColor = UIColor.blue
+        }
+        
         return tempView
     }
     

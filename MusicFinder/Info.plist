@@ -25,7 +25,7 @@
 			<string>serey.MusicFinder</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>serey.MusicFinder</string>
+				<string>musicfinder-auth</string>
 			</array>
 		</dict>
 	</array>

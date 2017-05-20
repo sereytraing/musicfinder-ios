@@ -33,6 +33,14 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92R-hk-cOU">
+                    <rect key="frame" x="162" y="417" width="90" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="disconnect"/>
+                    <connections>
+                        <action selector="disconnectButton:" destination="-1" eventType="touchUpInside" id="qh1-ye-BdU"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -41,6 +49,7 @@
                 <constraint firstItem="3Hu-5R-jeK" firstAttribute="top" secondItem="ava-Fi-cSx" secondAttribute="bottom" constant="20" id="syY-Mg-Tpa"/>
                 <constraint firstItem="3Hu-5R-jeK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="vvw-Jo-GIJ"/>
             </constraints>
+            <point key="canvasLocation" x="25.5" y="52.5"/>
         </view>
     </objects>
 </document>
