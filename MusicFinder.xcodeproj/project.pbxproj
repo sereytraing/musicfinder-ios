@@ -27,6 +27,7 @@
 		0F8DDFEA1ED06E9600289AE8 /* AuthOtherAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F8DDFE81ED06E9600289AE8 /* AuthOtherAccount.xib */; };
 		0F8DDFED1ED0997B00289AE8 /* UserInfoSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8DDFEC1ED0997B00289AE8 /* UserInfoSaver.swift */; };
 		0F8DDFF01ED09ADE00289AE8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8DDFEF1ED09ADE00289AE8 /* User.swift */; };
+		0F8DDFF21ED0A5D000289AE8 /* UserSpotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8DDFF11ED0A5D000289AE8 /* UserSpotify.swift */; };
 		0F8FFFD11E86E65F005FFDC3 /* LeftMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FFFCF1E86E65F005FFDC3 /* LeftMenuVC.swift */; };
 		0F8FFFD21E86E65F005FFDC3 /* LeftMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F8FFFD01E86E65F005FFDC3 /* LeftMenuVC.xib */; };
 		0F9C31931E87C8D100A84F2C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9C31921E87C8D100A84F2C /* UIViewController.swift */; };
@@ -65,6 +66,7 @@
 		0F8DDFE81ED06E9600289AE8 /* AuthOtherAccount.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthOtherAccount.xib; sourceTree = "<group>"; };
 		0F8DDFEC1ED0997B00289AE8 /* UserInfoSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoSaver.swift; sourceTree = "<group>"; };
 		0F8DDFEF1ED09ADE00289AE8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0F8DDFF11ED0A5D000289AE8 /* UserSpotify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSpotify.swift; sourceTree = "<group>"; };
 		0F8FFFCF1E86E65F005FFDC3 /* LeftMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuVC.swift; sourceTree = "<group>"; };
 		0F8FFFD01E86E65F005FFDC3 /* LeftMenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftMenuVC.xib; sourceTree = "<group>"; };
 		0F9C31921E87C8D100A84F2C /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				0F8DDFE81ED06E9600289AE8 /* AuthOtherAccount.xib */,
 				0F8DDFEE1ED0998200289AE8 /* UserInfo */,
 				0F8DDFEF1ED09ADE00289AE8 /* User.swift */,
+				0F8DDFF11ED0A5D000289AE8 /* UserSpotify.swift */,
 			);
 			name = Auth;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				0F9C319B1E87CAAE00A84F2C /* PlaylistVC.swift in Sources */,
 				0F9C31A01E87CCC600A84F2C /* ListGenreReusableView.swift in Sources */,
 				0F8DDFE61ED06DF300289AE8 /* BridgeViewController.m in Sources */,
+				0F8DDFF21ED0A5D000289AE8 /* UserSpotify.swift in Sources */,
 				0F8DDFF01ED09ADE00289AE8 /* User.swift in Sources */,
 				0F76423B1E87D3C400560D76 /* ListGenreQuizzVC.swift in Sources */,
 				0F8FFFD11E86E65F005FFDC3 /* LeftMenuVC.swift in Sources */,

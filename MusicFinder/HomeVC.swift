@@ -69,7 +69,16 @@ class HomeVC: UIViewController, iCarouselDelegate, iCarouselDataSource {
         return value * 1.3
     }
 
+    /*func requestAccount() {
+        //https://api.spotify.com/v1/me
+        
+    }*/
 }
 
+/*extension HomeVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+}*/
 
 
