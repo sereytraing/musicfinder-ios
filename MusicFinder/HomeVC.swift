@@ -9,11 +9,16 @@
 import UIKit
 import SWRevealViewController
 import iCarousel
+import Alamofire
 
 class HomeVC: UIViewController, iCarouselDelegate, iCarouselDataSource {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var carouselView: iCarousel!
     var numbers = [1,2,3]
+    
+    var urlInfoAccount = "https://api.spotify.com/v1/me"
+    typealias JSONStandard = [String: AnyObject]
+    let userDefaults = UserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +42,7 @@ class HomeVC: UIViewController, iCarouselDelegate, iCarouselDataSource {
     
     override func viewDidAppear(_ animated: Bool) {
         carouselView.reloadData()
+        callAlamofire(url: urlInfoAccount)
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,7 +57,7 @@ class HomeVC: UIViewController, iCarouselDelegate, iCarouselDataSource {
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         let tempView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         
-        let userDefaults = UserDefaults()
+        
         if let sessionObj:AnyObject = userDefaults.object(forKey: "SpotifySession") as AnyObject? {
              tempView.backgroundColor = UIColor.red
         }
@@ -69,10 +75,37 @@ class HomeVC: UIViewController, iCarouselDelegate, iCarouselDataSource {
         return value * 1.3
     }
 
-    /*func requestAccount() {
-        //https://api.spotify.com/v1/me
+    
+    func callAlamofire(url: String) {
+        let token: String?
+
+        if let sessionObj:AnyObject = userDefaults.object(forKey: "SpotifySession") as AnyObject? {
+            token = sessionObj.accessToken
+ 
+            let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+            
+            Alamofire.request(url, headers: headers).responseJSON(completionHandler: { (response) in
+                if let JSON = response.result.value {
+                    print(JSON)
+                }
+            })
+            
+            print(token)
+            
         
-    }*/
+            
+            /*Alamofire.request(url).responseJSON { (response) in
+                if let JSON = response.result.value {
+                    print(JSON)
+                }
+            }*/
+        }
+        
+        
+        
+    }
+    
+    
 }
 
 /*extension HomeVC: UITableViewDelegate, UITableViewDataSource {
