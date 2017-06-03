@@ -13,7 +13,7 @@ class LeftMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var mainViewController: UIViewController!
     var listGenreQuizz: ListGenreQuizzVC!
-    var items: [String] = ["Home","Aut", "Quizz", "Test"]
+    var items: [String] = ["Home","Auth Spotify", "Quizz", "Test"]
     
     @IBOutlet weak var tableView: UITableView!
     

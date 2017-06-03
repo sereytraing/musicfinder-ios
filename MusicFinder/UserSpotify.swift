@@ -11,20 +11,18 @@ import ObjectMapper
 
 class UserSpotify : Mappable{
     
-    var birthdate: String?
-    var country: String?
-    var display_name: String?
-    var email: String?
-    var href: String?
-    var type: String?
-    var images: [String :String?]?
+    var id : String?
     
     required init?(map: Map) {
         
     }
      
      func mapping(map: Map) {
-        display_name <- map["display_name"]
+        self.id <- map["id"]
      }
+    
+    func bind(id: String?) {
+        self.id = id
+    }
 }
 

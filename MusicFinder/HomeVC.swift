@@ -16,7 +16,7 @@ class HomeVC: UIViewController, iCarouselDelegate, iCarouselDataSource {
     @IBOutlet weak var carouselView: iCarousel!
     var numbers = [1,2,3]
     
-    var urlInfoAccount = "https://api.spotify.com/v1/me"
+    
     typealias JSONStandard = [String: AnyObject]
     let userDefaults = UserDefaults()
     
@@ -42,7 +42,6 @@ class HomeVC: UIViewController, iCarouselDelegate, iCarouselDataSource {
     
     override func viewDidAppear(_ animated: Bool) {
         carouselView.reloadData()
-        callAlamofire(url: urlInfoAccount)
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,33 +75,21 @@ class HomeVC: UIViewController, iCarouselDelegate, iCarouselDataSource {
     }
 
     
-    func callAlamofire(url: String) {
-        let token: String?
-
-        if let sessionObj:AnyObject = userDefaults.object(forKey: "SpotifySession") as AnyObject? {
-            token = sessionObj.accessToken
- 
-            let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
-            
+    func requestPlaylist(url: String) {
+        if let session = UserInfoSaver().isAuthenticatedSpotify() {
+            //token = session.accessToken
+            let headers: HTTPHeaders = ["Authorization": "Bearer " + session.accessToken!]
             Alamofire.request(url, headers: headers).responseJSON(completionHandler: { (response) in
                 if let JSON = response.result.value {
                     print(JSON)
                 }
             })
-            
-            print(token)
-            
-        
-            
-            /*Alamofire.request(url).responseJSON { (response) in
-                if let JSON = response.result.value {
-                    print(JSON)
-                }
-            }*/
         }
-        
-        
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        var urlPlaylist = "https://api.spotify.com/v1/users/alkrox/playlists"
+        //requestPlaylist(url: urlPlaylist)
     }
     
     

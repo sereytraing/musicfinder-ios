@@ -11,13 +11,19 @@ import Foundation
 class UserInfoSaver {
     static let USER_ID_KEY = "user_id"
     
-    let userDefault: UserDefaults?
+    let userDefaults: UserDefaults?
     
     init() {
-        userDefault = UserDefaults.standard
+        userDefaults = UserDefaults.standard
     }
     
-    func saveUser(id: String) {
-        
+    func isAuthenticatedSpotify() -> SPTSession? {
+        if let sessionObj:AnyObject = userDefaults?.object(forKey: "SpotifySession") as AnyObject? {
+            let sessionDataObj = sessionObj as! Data
+            let firstTimeSession = NSKeyedUnarchiver.unarchiveObject(with: sessionDataObj) as! SPTSession
+            return firstTimeSession
+        }
+        return nil
     }
+
 }

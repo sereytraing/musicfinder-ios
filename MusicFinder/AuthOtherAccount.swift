@@ -19,7 +19,6 @@ class AuthOtherAccount: UIViewController, SPTAudioStreamingPlaybackDelegate, SPT
     let userDefaults = UserDefaults()
     
     var urlInfoAccount = "https://api.spotify.com/v1/me"
-    //var urlInfoAccount = "https://api.spotify.com/v1/search?q=chris+brown&type=track"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,14 +61,11 @@ class AuthOtherAccount: UIViewController, SPTAudioStreamingPlaybackDelegate, SPT
         }
     }
     
+        
     func callAlamofire(url: String) {
         let token: String?
         
-        if let sessionObj:AnyObject = userDefaults.object(forKey: "SpotifySession") as AnyObject? {
-
-            let sessionDataObj = sessionObj as! Data
-            let firstTimeSession = NSKeyedUnarchiver.unarchiveObject(with: sessionDataObj) as! SPTSession
-            self.session = firstTimeSession
+        if let session = UserInfoSaver().isAuthenticatedSpotify() {
             token = session.accessToken
             let headers: HTTPHeaders = ["Authorization": "Bearer " + token!]
             print(headers)
@@ -78,12 +74,9 @@ class AuthOtherAccount: UIViewController, SPTAudioStreamingPlaybackDelegate, SPT
                     print(JSON)
                 }
             })
-            
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-        // userDefaults.removeObject(forKey: "SpotifySession")
         callAlamofire(url: urlInfoAccount)
-        
     }
 }
