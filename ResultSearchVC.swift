@@ -14,6 +14,7 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var searchurl = "https://api.spotify.com/v1/search?q=Bigbang&type=track&limit=2"
     var names = [String]()
+    var imagesTest = [String]()
     
     typealias JSONFormat = [String: AnyObject]
     @IBOutlet weak var tableView: UITableView!
@@ -22,6 +23,7 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        self.tableView.register(UINib(nibName: "ResultSearchCell", bundle: nil), forCellReuseIdentifier: "resultcell")
         requestResult(url: searchurl)
        
     }
@@ -33,6 +35,7 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             let headers: HTTPHeaders = ["Authorization": "Bearer " + token!]
             print(headers)
             
+            //Track
             Alamofire.request(url, headers: headers).responseObject(completionHandler: {
                 (response: DataResponse<ItemTypeTrack>) in
              
@@ -40,6 +43,7 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let tracks = itemType?.tracks
                 for item in (tracks?.items)! {
                     self.names.append(item.name!)
+                    self.imagesTest.append((item.album?.images?[2].url)!)
                 }
                 self.tableView.reloadData()
             })
@@ -47,50 +51,19 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    /*func requestResult(url: String) {
-        let token: String?
-        if let session = UserInfoSaver().isAuthenticatedSpotify() {
-            token = session.accessToken
-            let headers: HTTPHeaders = ["Authorization": "Bearer " + token!]
-            print(headers)
-            Alamofire.request(url, headers: headers).responseJSON(completionHandler: { (response) in
-                self.parseData(JSONData: response.data!)
-            })
-        }
-    }*/
-    
-    /*func parseData(JSONData: Data) {
-        do {
-            var readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! JSONFormat
-            if let tracks = readableJSON["tracks"] as? JSONFormat {
-                if let items = tracks["items"] as? [JSONFormat] {
-                    for i in 0..<items.count {
-                        let item = items[i]
-                        names.append(item["name"] as! String)
-                        self.tableView.reloadData()
-                    }
-                }
-            }
-        }
-        catch {
-            print(error)
-        }
-        
-    }*/
-    
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return names.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = names[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "resultcell", for: indexPath) as! ResultSearchCell
+        cell.bindData(title: names[indexPath.row], imageURL: imagesTest[indexPath.row])
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80.0
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

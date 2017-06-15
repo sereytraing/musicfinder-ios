@@ -28,7 +28,4 @@ class SearchVC: UIViewController {
         let resultSearchVC = ResultSearchVC(nibName: ResultSearchVC.className(), bundle: nil)
         navigationController?.pushViewController(resultSearchVC, animated: true)
     }
-
-    
-
 }

@@ -49,6 +49,8 @@
 		0FD52B401EF2B2F30039543E /* ItemTypeTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD52B3F1EF2B2F30039543E /* ItemTypeTrack.swift */; };
 		0FD52B421EF2B2FF0039543E /* ItemTypeArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD52B411EF2B2FF0039543E /* ItemTypeArtist.swift */; };
 		0FD52B441EF2B3080039543E /* ItemTypeAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD52B431EF2B3080039543E /* ItemTypeAlbum.swift */; };
+		0FD52B481EF2B7A60039543E /* ResultSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD52B461EF2B7A60039543E /* ResultSearchCell.swift */; };
+		0FD52B491EF2B7A60039543E /* ResultSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD52B471EF2B7A60039543E /* ResultSearchCell.xib */; };
 		7B2558C8E6DD95DA74C044A4 /* Pods_MusicFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09B7222D69CCF67E22724B8 /* Pods_MusicFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,8 @@
 		0FD52B3F1EF2B2F30039543E /* ItemTypeTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTypeTrack.swift; sourceTree = "<group>"; };
 		0FD52B411EF2B2FF0039543E /* ItemTypeArtist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTypeArtist.swift; sourceTree = "<group>"; };
 		0FD52B431EF2B3080039543E /* ItemTypeAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTypeAlbum.swift; sourceTree = "<group>"; };
+		0FD52B461EF2B7A60039543E /* ResultSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultSearchCell.swift; sourceTree = "<group>"; };
+		0FD52B471EF2B7A60039543E /* ResultSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultSearchCell.xib; sourceTree = "<group>"; };
 		52F489AD7CA62D8515DD5F92 /* Pods-MusicFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicFinder/Pods-MusicFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		B09B7222D69CCF67E22724B8 /* Pods_MusicFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -285,6 +289,7 @@
 			children = (
 				0FD52B2A1EF2899F0039543E /* ResultSearchVC.swift */,
 				0FD52B2B1EF2899F0039543E /* ResultSearchVC.xib */,
+				0FD52B4A1EF2B7AA0039543E /* ResultSearchCell */,
 			);
 			name = ResultSearch;
 			sourceTree = "<group>";
@@ -303,6 +308,15 @@
 				0FD52B391EF2AF370039543E /* Image.swift */,
 			);
 			name = Class;
+			sourceTree = "<group>";
+		};
+		0FD52B4A1EF2B7AA0039543E /* ResultSearchCell */ = {
+			isa = PBXGroup;
+			children = (
+				0FD52B461EF2B7A60039543E /* ResultSearchCell.swift */,
+				0FD52B471EF2B7A60039543E /* ResultSearchCell.xib */,
+			);
+			name = ResultSearchCell;
 			sourceTree = "<group>";
 		};
 		E6741686B545B27C12F5FD26 /* Frameworks */ = {
@@ -384,6 +398,7 @@
 				0F8DDFEA1ED06E9600289AE8 /* AuthOtherAccount.xib in Resources */,
 				0F7642401E87D47A00560D76 /* ListGenreCell.xib in Resources */,
 				0F201CDC1E86E02A00F0B631 /* HomeVC.xib in Resources */,
+				0FD52B491EF2B7A60039543E /* ResultSearchCell.xib in Resources */,
 				0FD52B2D1EF2899F0039543E /* ResultSearchVC.xib in Resources */,
 				0F9C319C1E87CAAE00A84F2C /* PlaylistVC.xib in Resources */,
 				0F201CCF1E86DFC400F0B631 /* Assets.xcassets in Resources */,
@@ -463,6 +478,7 @@
 				0F8DDFED1ED0997B00289AE8 /* UserInfoSaver.swift in Sources */,
 				0F8DDFE91ED06E9600289AE8 /* AuthOtherAccount.swift in Sources */,
 				0F76423F1E87D47A00560D76 /* ListGenreCell.swift in Sources */,
+				0FD52B481EF2B7A60039543E /* ResultSearchCell.swift in Sources */,
 				0FD52B3C1EF2AF970039543E /* Artist.swift in Sources */,
 				0FD52B361EF2ACFF0039543E /* Track.swift in Sources */,
 				0F201CC81E86DFC400F0B631 /* AppDelegate.swift in Sources */,
