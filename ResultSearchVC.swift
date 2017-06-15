@@ -18,6 +18,9 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     var searchUrl: String?
     var names = [String]()
     var imagesTest = [String]()
+    var albums: ItemType?
+    var artists: ItemType?
+    var tracks: ItemType?
     
     typealias JSONFormat = [String: AnyObject]
     @IBOutlet weak var segmentedBar: UISegmentedControl!
@@ -47,8 +50,8 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                     (response: DataResponse<ItemTypeTrack>) in
                     
                     let itemType = response.result.value
-                    let tracks = itemType?.tracks
-                    for item in (tracks?.items)! {
+                    self.tracks = itemType?.tracks
+                    for item in (self.tracks?.items)! {
                         self.names.append(item.name!)
                         self.imagesTest.append((item.album?.images?[2].url)!)
                     }
@@ -60,8 +63,8 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                     (response: DataResponse<ItemTypeAlbum>) in
                     
                     let itemType = response.result.value
-                    let albums = itemType?.albums
-                    for item in (albums?.items)! {
+                    self.albums = itemType?.albums
+                    for item in (self.albums?.items)! {
                         self.names.append(item.name!)
                         if item.images?[2].url != nil {
                             self.imagesTest.append((item.images?[2].url)!)
@@ -76,8 +79,8 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                     (response: DataResponse<ItemTypeArtist>) in
                     
                     let itemType = response.result.value
-                    let artists = itemType?.artists
-                    for item in (artists?.items)! {
+                    self.artists = itemType?.artists
+                    for item in (self.artists?.items)! {
                         self.names.append(item.name!)
                     }
                     self.tableView.reloadData()
@@ -106,6 +109,32 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80.0
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastElement = names.count - 1
+        if indexPath.row == lastElement {
+            if searchType == "track" {
+                if tracks?.next != nil {
+                    searchUrl = tracks?.next
+                    requestResult(url: searchUrl!, type: searchType)
+                }
+            }
+            else if searchType == "album" {
+                if albums?.next != nil {
+                    searchUrl = albums?.next
+                    requestResult(url: searchUrl!, type: searchType)
+                }
+            }
+            else if searchType == "artist" {
+                if artists?.next != nil {
+                    searchUrl = artists?.next
+                    requestResult(url: searchUrl!, type: searchType)
+                }
+
+            }
+        }
+    }
+    
     @IBAction func segmentedBarClicked(_ sender: Any) {
         names = []
         imagesTest = []
