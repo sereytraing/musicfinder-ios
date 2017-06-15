@@ -60,8 +60,7 @@ class AuthOtherAccount: UIViewController, SPTAudioStreamingPlaybackDelegate, SPT
             //print("MON ACCESS TOKEN \n n" + session.accessToken)
         }
     }
-    
-        
+
     func callAlamofire(url: String) {
         let token: String?
         
