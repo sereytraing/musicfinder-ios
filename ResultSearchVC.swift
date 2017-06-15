@@ -12,7 +12,9 @@ import AlamofireObjectMapper
 
 class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var searchurl = "https://api.spotify.com/v1/search?q=Bigbang&type=track&limit=2"
+    var searchWord = ""
+    var searchType = "track"
+    var searchUrl: String?
     var names = [String]()
     var imagesTest = [String]()
     
@@ -24,8 +26,9 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.register(UINib(nibName: "ResultSearchCell", bundle: nil), forCellReuseIdentifier: "resultcell")
-        requestResult(url: searchurl)
-       
+        let searchWordUpdated = searchWord.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+        searchUrl = "https://api.spotify.com/v1/search?q=" + searchWordUpdated + "&type=" + searchType
+        requestResult(url: searchUrl!)
     }
 
     func requestResult(url: String) {

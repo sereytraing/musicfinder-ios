@@ -26,6 +26,7 @@ class SearchVC: UIViewController {
     
     @IBAction func submitClicked(_ sender: Any) {
         let resultSearchVC = ResultSearchVC(nibName: ResultSearchVC.className(), bundle: nil)
+        resultSearchVC.searchWord = textField.text!
         navigationController?.pushViewController(resultSearchVC, animated: true)
     }
 }
