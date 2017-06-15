@@ -20,11 +20,16 @@ class ResultSearchCell: UITableViewCell {
         // Initialization code
     }
     
-    func bindData(title: String?, imageURL: String?) {
+    func bindData(title: String?, imageURL: String? = nil) {
         titleLabel.text = title
-        let url = URL(string: imageURL!)
-        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-        coverImageView.image = UIImage(data: data!)
+        if imageURL != nil {
+            let url = URL(string: imageURL!)
+            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            coverImageView.image = UIImage(data: data!)
+        } else {
+            coverImageView.image = nil
+        }
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

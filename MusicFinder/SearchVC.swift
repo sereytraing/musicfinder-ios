@@ -25,8 +25,15 @@ class SearchVC: UIViewController {
     }
     
     @IBAction func submitClicked(_ sender: Any) {
-        let resultSearchVC = ResultSearchVC(nibName: ResultSearchVC.className(), bundle: nil)
-        resultSearchVC.searchWord = textField.text!
-        navigationController?.pushViewController(resultSearchVC, animated: true)
+        if (textField.text?.isEmpty)! {
+            let alert = UIAlertController(title: "Oops !", message: "Écrivez un mot dans la barre de saisie avant", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Fermer", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let resultSearchVC = ResultSearchVC(nibName: ResultSearchVC.className(), bundle: nil)
+            resultSearchVC.searchWord = textField.text!
+            navigationController?.pushViewController(resultSearchVC, animated: true)
+        }
+        
     }
 }

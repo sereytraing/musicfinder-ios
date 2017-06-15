@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultSearchVC" customModule="MusicFinder" customModuleProvider="target">
             <connections>
+                <outlet property="segmentedBar" destination="2wv-LB-jDr" id="f9y-tg-L8h"/>
                 <outlet property="tableView" destination="4ZW-Rp-3CF" id="pdo-uK-kGZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,17 +22,32 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4ZW-Rp-3CF">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="38" width="375" height="629"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2wv-LB-jDr">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
+                    <segments>
+                        <segment title="Musique"/>
+                        <segment title="Album"/>
+                        <segment title="Artiste"/>
+                    </segments>
+                    <connections>
+                        <action selector="segmentedBarClicked:" destination="-1" eventType="valueChanged" id="t1e-Kd-kQF"/>
+                    </connections>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="4ZW-Rp-3CF" secondAttribute="trailing" id="DhC-2I-gKc"/>
-                <constraint firstItem="4ZW-Rp-3CF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="EiA-QA-c7k"/>
                 <constraint firstAttribute="bottom" secondItem="4ZW-Rp-3CF" secondAttribute="bottom" id="IVT-Ma-xxy"/>
+                <constraint firstItem="2wv-LB-jDr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KEz-4J-z7D"/>
+                <constraint firstAttribute="trailing" secondItem="2wv-LB-jDr" secondAttribute="trailing" id="Qgx-jm-Nft"/>
                 <constraint firstItem="4ZW-Rp-3CF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="chS-ya-kBO"/>
+                <constraint firstItem="4ZW-Rp-3CF" firstAttribute="top" secondItem="2wv-LB-jDr" secondAttribute="bottom" constant="10" id="g2w-5u-mLr"/>
+                <constraint firstItem="2wv-LB-jDr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jTo-nM-XgZ"/>
             </constraints>
+            <point key="canvasLocation" x="34.5" y="88.5"/>
         </view>
     </objects>
 </document>
