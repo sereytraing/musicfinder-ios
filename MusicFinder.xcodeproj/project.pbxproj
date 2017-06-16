@@ -51,6 +51,10 @@
 		0FD52B441EF2B3080039543E /* ItemTypeAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD52B431EF2B3080039543E /* ItemTypeAlbum.swift */; };
 		0FD52B481EF2B7A60039543E /* ResultSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD52B461EF2B7A60039543E /* ResultSearchCell.swift */; };
 		0FD52B491EF2B7A60039543E /* ResultSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD52B471EF2B7A60039543E /* ResultSearchCell.xib */; };
+		0FD52B4D1EF32F580039543E /* TrackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD52B4B1EF32F580039543E /* TrackVC.swift */; };
+		0FD52B4E1EF32F580039543E /* TrackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD52B4C1EF32F580039543E /* TrackVC.xib */; };
+		0FD52B521EF335750039543E /* AlbumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD52B501EF335750039543E /* AlbumVC.swift */; };
+		0FD52B531EF335750039543E /* AlbumVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD52B511EF335750039543E /* AlbumVC.xib */; };
 		7B2558C8E6DD95DA74C044A4 /* Pods_MusicFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09B7222D69CCF67E22724B8 /* Pods_MusicFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +107,10 @@
 		0FD52B431EF2B3080039543E /* ItemTypeAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTypeAlbum.swift; sourceTree = "<group>"; };
 		0FD52B461EF2B7A60039543E /* ResultSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultSearchCell.swift; sourceTree = "<group>"; };
 		0FD52B471EF2B7A60039543E /* ResultSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultSearchCell.xib; sourceTree = "<group>"; };
+		0FD52B4B1EF32F580039543E /* TrackVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackVC.swift; sourceTree = "<group>"; };
+		0FD52B4C1EF32F580039543E /* TrackVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackVC.xib; sourceTree = "<group>"; };
+		0FD52B501EF335750039543E /* AlbumVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumVC.swift; sourceTree = "<group>"; };
+		0FD52B511EF335750039543E /* AlbumVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumVC.xib; sourceTree = "<group>"; };
 		52F489AD7CA62D8515DD5F92 /* Pods-MusicFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicFinder/Pods-MusicFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		B09B7222D69CCF67E22724B8 /* Pods_MusicFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,6 +169,8 @@
 				0FD52B451EF2B7050039543E /* Class */,
 				0FD52B291EF2882F0039543E /* Search */,
 				0FD52B2E1EF289AA0039543E /* ResultSearch */,
+				0FD52B4F1EF32F5C0039543E /* Track */,
+				0FD52B541EF335790039543E /* Album */,
 				0F201CCE1E86DFC400F0B631 /* Assets.xcassets */,
 				0F201CD01E86DFC400F0B631 /* LaunchScreen.storyboard */,
 				0F201CD31E86DFC400F0B631 /* Info.plist */,
@@ -319,6 +329,24 @@
 			name = ResultSearchCell;
 			sourceTree = "<group>";
 		};
+		0FD52B4F1EF32F5C0039543E /* Track */ = {
+			isa = PBXGroup;
+			children = (
+				0FD52B4B1EF32F580039543E /* TrackVC.swift */,
+				0FD52B4C1EF32F580039543E /* TrackVC.xib */,
+			);
+			name = Track;
+			sourceTree = "<group>";
+		};
+		0FD52B541EF335790039543E /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				0FD52B501EF335750039543E /* AlbumVC.swift */,
+				0FD52B511EF335750039543E /* AlbumVC.xib */,
+			);
+			name = Album;
+			sourceTree = "<group>";
+		};
 		E6741686B545B27C12F5FD26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,7 +427,9 @@
 				0F7642401E87D47A00560D76 /* ListGenreCell.xib in Resources */,
 				0F201CDC1E86E02A00F0B631 /* HomeVC.xib in Resources */,
 				0FD52B491EF2B7A60039543E /* ResultSearchCell.xib in Resources */,
+				0FD52B4E1EF32F580039543E /* TrackVC.xib in Resources */,
 				0FD52B2D1EF2899F0039543E /* ResultSearchVC.xib in Resources */,
+				0FD52B531EF335750039543E /* AlbumVC.xib in Resources */,
 				0F9C319C1E87CAAE00A84F2C /* PlaylistVC.xib in Resources */,
 				0F201CCF1E86DFC400F0B631 /* Assets.xcassets in Resources */,
 				0F9C31A11E87CCC600A84F2C /* ListGenreReusableView.xib in Resources */,
@@ -470,12 +500,14 @@
 				0FD52B2C1EF2899F0039543E /* ResultSearchVC.swift in Sources */,
 				0FD52B3E1EF2B1AE0039543E /* Item.swift in Sources */,
 				0F8DDFF21ED0A5D000289AE8 /* UserSpotify.swift in Sources */,
+				0FD52B521EF335750039543E /* AlbumVC.swift in Sources */,
 				0FD52B381EF2AE9C0039543E /* Album.swift in Sources */,
 				0F8DDFF01ED09ADE00289AE8 /* User.swift in Sources */,
 				0F76423B1E87D3C400560D76 /* ListGenreQuizzVC.swift in Sources */,
 				0F8FFFD11E86E65F005FFDC3 /* LeftMenuVC.swift in Sources */,
 				0FD52B3A1EF2AF370039543E /* Image.swift in Sources */,
 				0F8DDFED1ED0997B00289AE8 /* UserInfoSaver.swift in Sources */,
+				0FD52B4D1EF32F580039543E /* TrackVC.swift in Sources */,
 				0F8DDFE91ED06E9600289AE8 /* AuthOtherAccount.swift in Sources */,
 				0F76423F1E87D47A00560D76 /* ListGenreCell.swift in Sources */,
 				0FD52B481EF2B7A60039543E /* ResultSearchCell.swift in Sources */,

@@ -17,7 +17,9 @@ class Album: Mappable {
     var images: [Image]?
     var name: String?
     var type: String?
-    
+    var label: String?
+    var release_date: String?
+    var tracks: ItemType?
     
     required init?(map: Map){
     }
@@ -30,6 +32,8 @@ class Album: Mappable {
         name <- map["name"]
         images <- map["images"]
         type <- map["type"]
-        
+        label <- map["label"]
+        release_date <- map["release_date"]
+        tracks <- map["tracks"]
     }
 }

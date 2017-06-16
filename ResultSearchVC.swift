@@ -135,6 +135,24 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if searchType == "track" {
+            let trackVC = TrackVC(nibName: TrackVC.className(), bundle: nil)
+            trackVC.track = tracks?.items?[indexPath.row]
+            navigationController?.pushViewController(trackVC, animated: true)
+        }
+        
+        else if searchType == "album" {
+            let albumVC = AlbumVC(nibName: AlbumVC.className(), bundle: nil)
+            albumVC.url = albums?.items?[indexPath.row].href
+            navigationController?.pushViewController(albumVC, animated: true)
+        }
+        
+        else if searchType == "artist" {
+            
+        }
+    }
+    
     @IBAction func segmentedBarClicked(_ sender: Any) {
         names = []
         imagesTest = []
