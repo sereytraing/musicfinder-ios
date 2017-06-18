@@ -22,6 +22,7 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     var artists: ItemType?
     var tracks: ItemType?
     
+    @IBOutlet weak var noResultView: UIView!
     @IBOutlet weak var segmentedBar: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,6 +31,8 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         self.edgesForExtendedLayout = []
+        noResultView.isHidden = true
+        
         self.tableView.register(UINib(nibName: "ResultSearchCell", bundle: nil), forCellReuseIdentifier: "resultcell")
         searchWordUpdated = searchWord.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
         searchUrl = "https://api.spotify.com/v1/search?q=" + searchWordUpdated + "&type=" + searchType
@@ -54,6 +57,11 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                         self.names.append(item.name!)
                         self.imagesTest.append((item.album?.images?[2].url)!)
                     }
+                    if self.names.count == 0 {
+                        self.noResultView.isHidden = false
+                    }else {
+                        self.noResultView.isHidden = true
+                    }
                     self.tableView.reloadData()
                 })
             }
@@ -69,6 +77,11 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                             self.imagesTest.append((item.images?[2].url)!)
                         }
                     }
+                    if self.names.count == 0 {
+                        self.noResultView.isHidden = false
+                    }else {
+                        self.noResultView.isHidden = true
+                    }
                     self.tableView.reloadData()
                 })
             }
@@ -82,11 +95,15 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                     for item in (self.artists?.items)! {
                         self.names.append(item.name!)
                     }
+                    if self.names.count == 0 {
+                        self.noResultView.isHidden = false
+                    }else {
+                        self.noResultView.isHidden = true
+                    }
                     self.tableView.reloadData()
                 })
             }
             
-
         }
     }
     
