@@ -22,7 +22,6 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     var artists: ItemType?
     var tracks: ItemType?
     
-    typealias JSONFormat = [String: AnyObject]
     @IBOutlet weak var segmentedBar: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
@@ -138,7 +137,7 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if searchType == "track" {
             let trackVC = TrackVC(nibName: TrackVC.className(), bundle: nil)
-            trackVC.track = tracks?.items?[indexPath.row]
+            trackVC.item = tracks?.items?[indexPath.row]
             navigationController?.pushViewController(trackVC, animated: true)
         }
         
@@ -149,7 +148,9 @@ class ResultSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         else if searchType == "artist" {
-            
+            let artistVC = ArtistVC(nibName: ArtistVC.className(), bundle: nil)
+            artistVC.artist = artists?.items?[indexPath.row]
+            navigationController?.pushViewController(artistVC, animated: true)
         }
     }
     

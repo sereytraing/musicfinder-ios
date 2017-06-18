@@ -54,7 +54,7 @@ class AlbumVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let trackVC = TrackVC(nibName: TrackVC.className(), bundle: nil)
-        trackVC.track = tracks[indexPath.row]
+        trackVC.item = tracks[indexPath.row]
         trackVC.album = album
         navigationController?.pushViewController(trackVC, animated: true)
     }

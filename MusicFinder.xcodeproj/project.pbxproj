@@ -13,6 +13,7 @@
 		0F201CDB1E86E02A00F0B631 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F201CD91E86E02A00F0B631 /* HomeVC.swift */; };
 		0F201CDC1E86E02A00F0B631 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F201CDA1E86E02A00F0B631 /* HomeVC.xib */; };
 		0F220B8B1E87D938000589EC /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F220B8A1E87D938000589EC /* NSObject.swift */; };
+		0F55748D1EF6A05C004DCCB6 /* TopTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F55748C1EF6A05C004DCCB6 /* TopTrack.swift */; };
 		0F76423B1E87D3C400560D76 /* ListGenreQuizzVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7642391E87D3C400560D76 /* ListGenreQuizzVC.swift */; };
 		0F76423C1E87D3C400560D76 /* ListGenreQuizzVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F76423A1E87D3C400560D76 /* ListGenreQuizzVC.xib */; };
 		0F76423F1E87D47A00560D76 /* ListGenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F76423D1E87D47A00560D76 /* ListGenreCell.swift */; };
@@ -70,6 +71,7 @@
 		0F201CDA1E86E02A00F0B631 /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		0F220B8A1E87D938000589EC /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		0F3C26ADCA39C443CD516399 /* Pods-MusicFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicFinder/Pods-MusicFinder.release.xcconfig"; sourceTree = "<group>"; };
+		0F55748C1EF6A05C004DCCB6 /* TopTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTrack.swift; sourceTree = "<group>"; };
 		0F7642391E87D3C400560D76 /* ListGenreQuizzVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListGenreQuizzVC.swift; sourceTree = "<group>"; };
 		0F76423A1E87D3C400560D76 /* ListGenreQuizzVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListGenreQuizzVC.xib; sourceTree = "<group>"; };
 		0F76423D1E87D47A00560D76 /* ListGenreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListGenreCell.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				0FD52B371EF2AE9C0039543E /* Album.swift */,
 				0FD52B3B1EF2AF970039543E /* Artist.swift */,
 				0FD52B391EF2AF370039543E /* Image.swift */,
+				0F55748C1EF6A05C004DCCB6 /* TopTrack.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				0FD52B4D1EF32F580039543E /* TrackVC.swift in Sources */,
 				0F8DDFE91ED06E9600289AE8 /* AuthOtherAccount.swift in Sources */,
 				0F76423F1E87D47A00560D76 /* ListGenreCell.swift in Sources */,
+				0F55748D1EF6A05C004DCCB6 /* TopTrack.swift in Sources */,
 				0FD52B481EF2B7A60039543E /* ResultSearchCell.swift in Sources */,
 				0FD52B3C1EF2AF970039543E /* Artist.swift in Sources */,
 				0FD52B361EF2ACFF0039543E /* Track.swift in Sources */,
